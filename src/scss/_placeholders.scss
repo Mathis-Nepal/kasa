@@ -1,0 +1,19 @@
+%flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+%absolute-0 {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+%absolute {
+	position: absolute;
+}
+
+%no_decoration {
+	text-decoration: none;
+}

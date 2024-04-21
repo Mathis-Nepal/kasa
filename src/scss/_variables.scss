@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+
+.font-bold {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+};
+
+.font-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+};
+
+
+// Color 
+
+$color-primary: #FF6060;
+$color-secondary: #000;
+$color-light: #fff;
+$color-light-accent: #F6F6F6;
+
+// height 
+
+$navbar-height: 99px;
+$footer-height: 210px;
