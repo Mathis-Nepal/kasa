@@ -1,16 +1,7 @@
 import React from 'react';
 import data from '../data.json';
-import { Link } from 'react-router-dom';
-import { SubHeader } from '../components/components';
+import { SubHeader,Location } from '../components/components';
 import Layout from '../layouts/layout';
-
-const Locations = ({ title, src, id }) => {
-    return (
-        <Link to={`/accommodation/${id}`} className="accomodation">
-            <h2>{title}</h2>
-        </Link>
-    );
-};
 
 export default function Root() {
     return (
@@ -25,7 +16,7 @@ export default function Root() {
                         (location, index) => (
                             console.log(location),
                             (
-                                <Locations
+                                <Location
                                     key={index}
                                     title={location.title}
                                     src={location.cover}
