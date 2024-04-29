@@ -1,22 +1,22 @@
 import React from 'react';
-import "../scss/style.scss";
+import '../scss/style.scss';
+import Chevron from './chevron';
 
 const Navbar = () => {
     return (
         <>
-        <nav>
-            <img  className="" src="/kasa_logo.png" alt="" />
-            <ul>
-                <li>
-                    <a href="/">Accueil</a>
-                </li>
-                <li>
-                    <a href="/about">A propos</a>
-                </li>
-            </ul>
-        </nav>
+            <nav>
+                <Chevron color={'red'}></Chevron>
+                <ul>
+                    <li>
+                        <a href="/">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="/about">A propos</a>
+                    </li>
+                </ul>
+            </nav>
         </>
     );
-
 };
 export default Navbar;

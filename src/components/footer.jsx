@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Chevron from './chevron';
 const Footer = () => {
     const [contentHeight, setContentHeight] = useState(0);
 
@@ -10,9 +11,9 @@ const Footer = () => {
         );
     }, []);
     return (
-        <footer style={{height : contentHeight}}>
+        <footer style={{ height: contentHeight }}>
             <div>
-                <img src="/kasa_logo_white.png" alt="" />
+                <Chevron color={'white'}></Chevron>
                 <p>© 2020 Kasa. All rights reserved</p>
             </div>
         </footer>

@@ -1,27 +1,24 @@
 import React from 'react';
 import data from '../data.json';
 import { Link } from 'react-router-dom';
-import { Navbar, Footer, SubHeader } from '../components/components';
+import { SubHeader } from '../components/components';
+import Layout from '../layouts/layout';
 
 const Locations = ({ title, src, id }) => {
     return (
         <Link to={`/accommodation/${id}`} className="accomodation">
-            {/* <a href={`/accommodation/${id}`} className='location'> */}
-            {/* <img src={src} alt="" /> */}
             <h2>{title}</h2>
-            {/* </a> */}
         </Link>
     );
 };
 
 export default function Root() {
     return (
-        <>
-            <Navbar></Navbar>
+        <Layout>
             <main className="home">
                 <SubHeader
                     path="/montagne_view.png"
-                    title="Chez vous,partout et ailleurs"
+                    title="Chez vous, partout et ailleurs"
                 ></SubHeader>
                 <section className="location-container">
                     {data.map(
@@ -39,7 +36,6 @@ export default function Root() {
                     )}
                 </section>
             </main>
-            <Footer></Footer>
-        </>
+        </Layout>
     );
 }

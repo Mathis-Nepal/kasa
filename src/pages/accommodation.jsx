@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
 import data from '../data.json';
 import React, { useState } from 'react';
-import { Navbar, Rating, Accordion, Footer } from '../components/components';
+import { Rating, Accordion } from '../components/components';
+import Layout from '../layouts/layout';
 const Accommodation = () => {
     const { id } = useParams();
 
@@ -24,16 +25,15 @@ const Accommodation = () => {
     };
 
     return (
-        <>
-            <Navbar></Navbar>
+        <Layout>
             <main className="accomodation-main px-sm">
                 <div className="carousel ">
                     <div className="overlay-button">
                         <button onClick={prevSlide}>
-                            <img src="/inferior_at.png" alt="" />
+                            <img src="/chevron.svg" alt="" />
                         </button>
                         <button onClick={nextSlide}>
-                            <img src="/superior_at.png" alt="" />
+                            <img className='reverse' src="/chevron.svg" alt="" />
                         </button>
                     </div>
                     <img
@@ -74,8 +74,7 @@ const Accommodation = () => {
                     ></Accordion>
                 </div>
             </main>
-            <Footer></Footer>
-        </>
+        </Layout>
     );
 };
 export default Accommodation;

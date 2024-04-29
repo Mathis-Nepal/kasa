@@ -35,8 +35,8 @@ nav {
         display: flex;
         gap: 2rem;
     }
-    img {
-        width: 145px;
+    svg {
+        width: clamp(5rem, 15vw, 10rem);
     }
 }
 
@@ -47,7 +47,7 @@ footer {
     div {
         @extend %flex-center;
         flex-direction: column;
-        img {
+        svg {
             width: 100px;
         }
         p {
@@ -181,6 +181,9 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        .reverse {
+            transform: rotate(180deg);
+        }
     }
     button {
         height: 100%;
@@ -264,7 +267,6 @@ footer {
     }
 }
 
-// styles.scss
 
 .container {
     background-color: $color-light-accent;

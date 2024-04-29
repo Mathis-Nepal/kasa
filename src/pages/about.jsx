@@ -1,5 +1,5 @@
-import { Navbar, Footer, Accordion, SubHeader } from '../components/components';
-import { useEffect, useState } from 'react';
+import { Accordion, SubHeader } from '../components/components';
+import Layout from '../layouts/layout';
 const dataAccordion = [
     {
         title: 'Fiabilité',
@@ -19,12 +19,10 @@ const dataAccordion = [
     },
 ];
 
-
 const About = () => {
     return (
-        <>
-            <Navbar></Navbar>
-            <main className='home'>
+        <Layout>
+            <main className="home">
                 <SubHeader path="/montagne_view_2.png"></SubHeader>
                 {dataAccordion.map((data) => {
                     return (
@@ -35,8 +33,7 @@ const About = () => {
                     );
                 })}
             </main>
-            <Footer></Footer>
-        </>
+        </Layout>
     );
 };
 

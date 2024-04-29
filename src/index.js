@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Root from './routes/home';
-import Accomodation from './routes/accommodation';
+import Root from './pages/home';
+import Accomodation from './pages/accommodation';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ErrorPage from './components/error-page';
+import ErrorPage from './pages/error';
 import './scss/style.scss';
-import About from './routes/about';
+import About from './pages/about';
 const router = createBrowserRouter([
     {
         path: '/',

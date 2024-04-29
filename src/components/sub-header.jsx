@@ -1,8 +1,4 @@
 const SubHeader = ({path, title}) => {
-    console.log('ssssss');
-    console.log(path);
-
-    console.log(title);
     return (
         <div className="sub-header">
             <img src={path} alt="" />
