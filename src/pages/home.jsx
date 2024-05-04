@@ -1,26 +1,26 @@
 import React from 'react';
 import data from '../data.json';
-import { SubHeader,Location } from '../components/components';
+import { SubHeader, Accomodation } from '../components/components';
 import Layout from '../layouts/layout';
 
 export default function Root() {
     return (
         <Layout>
-            <main className="home">
+            <main className="p-5">
                 <SubHeader
                     path="/montagne_view.png"
                     title="Chez vous, partout et ailleurs"
                 ></SubHeader>
-                <section className="location-container">
+                <section className="accomodation-container">
                     {data.map(
-                        (location, index) => (
-                            console.log(location),
+                        (accomodation, index) => (
+                            console.log(accomodation),
                             (
-                                <Location
+                                <Accomodation
                                     key={index}
-                                    title={location.title}
-                                    src={location.cover}
-                                    id={location.id}
+                                    title={accomodation.title}
+                                    src={accomodation.cover}
+                                    id={accomodation.id}
                                 />
                             )
                         ),

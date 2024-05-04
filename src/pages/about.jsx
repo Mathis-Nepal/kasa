@@ -22,7 +22,7 @@ const dataAccordion = [
 const About = () => {
     return (
         <Layout>
-            <main className="home">
+            <main className="p-5">
                 <SubHeader path="/montagne_view_2.png"></SubHeader>
                 {dataAccordion.map((data) => {
                     return (

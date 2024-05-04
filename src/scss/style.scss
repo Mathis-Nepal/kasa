@@ -2,7 +2,7 @@
 @import './_mixins.scss';
 @import './_placeholders.scss';
 
-// Général
+// ----General----
 * .mx-sm {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
@@ -10,6 +10,9 @@
 .px-sm {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+}
+.p-5 {
+    padding: 1.5rem;
 }
 .w-50 {
     width: 50%;
@@ -25,65 +28,72 @@ a {
     @extend %no_decoration;
 }
 
-nav {
+.reverse {
+    transform: rotate(180deg);
+}
+// ----navigation----
+
+.navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
 
-    ul {
+    &__list {
         display: flex;
         gap: 2rem;
     }
-    svg {
+    &__chevron {
         width: clamp(5rem, 15vw, 10rem);
     }
 }
 
-footer {
+// ----Footer----
+
+.footer {
     @extend %flex-center;
     min-height: 210px;
     background-color: $color-secondary;
-    div {
+    &__container {
         @extend %flex-center;
         flex-direction: column;
-        svg {
+        &__chevron {
             width: 100px;
         }
-        p {
+        &__text {
             color: $color-light;
             margin: 0.5rem 0;
         }
     }
 }
 
-.error-page {
+// ----404 page----
+
+.main-404 {
     @extend %flex-center;
     flex-direction: column;
     height: calc(100svh - #{$navbar-height + $footer-height});
 
     color: $color-primary;
-    h1 {
+    &__title {
         font-size: 8rem;
         margin: 0;
         margin-bottom: 4rem;
     }
-    p {
+    &__text {
         margin: 0;
         margin-bottom: 4rem;
         font-size: 1.2rem;
         text-align: center;
         max-width: 18rem;
     }
-    a {
+    &__link {
         text-decoration: underline;
         font-size: 1.2rem;
     }
 }
 
-.home {
-    padding: 1.5rem;
-}
+// ----SubHeader----
 
 .sub-header {
     margin-bottom: 1rem;
@@ -91,20 +101,23 @@ footer {
     width: 100%;
     height: clamp(7rem, 13vw, 14rem);
     border-radius: 10px;
-    .overlay {
+    @include max-breakpoint(medium) {
+        margin-bottom: 1.5rem;
+    }
+    &__overlay {
         position: absolute;
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 10px;
         @extend %flex-center;
-        h1 {
+        &__title {
             margin: 2rem;
             color: $color-light;
             font-size: clamp(1.5rem, 3vw, 2.5rem);
         }
     }
-    img {
+    &__background-img {
         border-radius: 10px;
         position: absolute;
         object-fit: cover;
@@ -112,6 +125,8 @@ footer {
         width: 100%;
     }
 }
+
+// ----bloc accomodation in home----
 
 .accomodation {
     aspect-ratio: 1/1;
@@ -128,31 +143,24 @@ footer {
         rgba(0, 0, 0, 0.5) 100%
     );
     background-color: $color-primary;
-
-    h2 {
+    @include max-breakpoint(small) {
+        margin-bottom: 1rem;
+    }
+    &__title {
         color: $color-light;
         font-size: 1.5rem;
         margin: 1.5rem;
     }
 }
 
-@media screen and (max-width: 568px) {
-    .accomodation {
-        margin-bottom: 1rem;
-    }
-}
-@media screen and (min-width: 568px) {
-    .location-container {
+// ----Accueil----
+.accomodation-container {
+    @include min-breakpoint(small) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
     }
-}
-@media screen and (min-width: 850px) {
-    .sub-header {
-        margin-bottom: 1.5rem;
-    }
-    .location-container {
+    @include min-breakpoint(medium) {
         background-color: $color-light-accent;
         padding: 2rem;
         display: grid;
@@ -160,117 +168,116 @@ footer {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
-
-.carousel {
-    margin-bottom: 1.5rem;
-    border-radius: 10px;
-    width: 100%;
-    height: clamp(15rem, 35vw, 25rem);
-    position: relative;
-
-    img {
-        border-radius: 10px;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .overlay-button {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .reverse {
-            transform: rotate(180deg);
-        }
-    }
-    button {
-        height: 100%;
-        background-color: transparent;
-        border: none;
-        width: 100px;
-        img {
-            width: 20px;
-            object-fit: contain;
-        }
-    }
-}
+// ----Accomodation----
 
 .accomodation-main {
-    .title {
-        color: $color-primary;
-    }
-    .location {
+    &__carousel {
         margin-bottom: 1.5rem;
-        color: $color-secondary;
-    }
-}
-
-.stars-list {
-    white-space: nowrap;
-}
-@media screen and (min-width: 568px) {
-    .information {
-        display: flex;
-        .principal-information {
-            flex: 1;
-        }
-        .rating-host-row {
-            margin-bottom: 0.5rem;
-            flex-direction: column-reverse;
-        }
-    }
-}
-@media screen and (max-width: 568px) {
-    .rating-host-row {
-        margin-top: 1.5rem;
-    }
-}
-
-.list-equipments-accomadation {
-    p {
-        display: inline-block;
-        white-space: nowrap;
-        background-color: $color-primary;
-        margin-right: 0.5rem;
-        margin-bottom: 0.5rem;
         border-radius: 10px;
-        font-size: 0.8rem;
-        color: $color-light;
-        padding: 0.5rem 1rem;
+        width: 100%;
+        height: clamp(15rem, 35vw, 25rem);
+        position: relative;
+
+        &__background-img {
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &__overlay-button {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__button {
+                cursor: pointer;
+                height: 100%;
+                background-color: transparent;
+                border: none;
+                width: 100px;
+                &__img {
+                    width: 20px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+    &__information {
+        @include min-breakpoint(small) {
+            display: flex;
+        }
+        &__principal-information {
+            @include min-breakpoint(small) {
+                flex: 1;
+            }
+            &__title {
+                color: $color-primary;
+            }
+            &__location {
+                margin-bottom: 1.5rem;
+            }
+            &__list-equipments-accomadation {
+                p {
+                    display: inline-block;
+                    white-space: nowrap;
+                    background-color: $color-primary;
+                    margin-right: 0.5rem;
+                    margin-bottom: 0.5rem;
+                    border-radius: 10px;
+                    font-size: 0.8rem;
+                    color: $color-light;
+                    padding: 0.5rem 1rem;
+                }
+            }
+        }
+
+        &__rating-host-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include min-breakpoint(small) {
+                margin-bottom: 0.5rem;
+                flex-direction: column-reverse;
+            }
+            @include max-breakpoint(small) {
+                margin-top: 1.5rem;
+            }
+            &__host {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                &__name {
+                    color: $color-primary;
+                    font-size: 0.8rem;
+                    white-space: pre-wrap;
+                }
+                &__picture {
+                    border-radius: 50%;
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+    }
+    &__container-accordion {
+        margin-bottom: 1.5rem;
+        @include min-breakpoint(small) {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
     }
 }
-// styles.scss
 
-.star {
-    margin-right: 0.5rem;
-}
-.rating-host-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.host {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    p {
-        color: $color-primary;
-        font-size: 0.8rem;
-        white-space: pre-wrap;
-    }
-    img {
-        border-radius: 50%;
-        width: 2rem;
-        height: 2rem;
-    }
-}
+// ----Accordion----
 
-
-.container {
+.accordion {
     background-color: $color-light-accent;
     border-radius: 0 0 10px 10px;
+    flex: 1;
     z-index: 5;
     overflow: hidden;
     position: relative;
@@ -281,78 +288,57 @@ footer {
     transition: all 1s ease; /* Animation de transition de la hauteur */
     font-size: 0.8rem;
     height: auto;
-}
-
-.header {
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: $color-primary;
-    color: $color-light;
-    cursor: pointer;
-    padding: 1rem 1rem;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-
-    * {
-        margin: 0;
+    &.open {
+        .accordion__content {
+            max-height: 200px;
+        }
+        .accordion__header__chevron {
+            transform: rotate(180deg);
+        }
     }
-    //before
-    // &::after {
-    //     content: '';
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 100%;
-    //     background-color: orange;
-    //     z-index: -1;
-    // }
-}
+    &__header {
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $color-primary;
+        color: $color-light;
+        cursor: pointer;
+        padding: 1rem 1rem;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
 
-.content {
-    transition: all 0.3s ease-in-out;
-    max-height: 0;
-    width: 100%;
-    p,
-    ul {
-        padding: 1rem;
-        margin: 0;
+        * {
+            margin: 0;
+        }
+        &__chevron {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid $color-light;
+            transition: transform 0.3s ease; /* Animation de transition de la rotation */
+        }
     }
-}
-
-.container.open .content {
-    max-height: 200px;
-}
-
-/* Rotation du chevron vers le bas lorsqu'ouvert */
-.container.open .header .chevron {
-    transform: rotate(180deg);
-}
-
-/* Styles du chevron */
-.chevron {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 5px solid $color-light;
-    transition: transform 0.3s ease; /* Animation de transition de la rotation */
-}
-
-// accordion
-
-.container-accordion {
-    margin-bottom: 1.5rem;
-}
-@media screen and (min-width: 568px) {
-    .container-accordion {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
+    &__content {
+        transition: all 0.3s ease-in-out;
+        max-height: 0;
+        width: 100%;
+        p,
+        ul {
+            padding: 1rem;
+            margin: 0;
+        }
     }
 }
-@media screen and (max-width: 568px) {
+
+// ----Rating----
+
+.stars-list {
+    white-space: nowrap;
+}
+
+.star {
+    margin-right: 0.5rem;
 }

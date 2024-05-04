@@ -1,7 +1,8 @@
 import React from 'react';
 
-const Chevron = ({ color }) => (
+const Chevron = ({ color, className }) => (
     <svg
+        className={className}
         width="123"
         height="41"
         viewBox="0 0 123 41"

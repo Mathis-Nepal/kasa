@@ -8,13 +8,16 @@ function Accordion({ title, text, listText, className }) {
     };
 
     return (
-        <div className={`container ${isOpen ? 'open' : ''} ${className} `}>
-                <div className="header font-bold" onClick={toggleAccordion}>
-                    <p>{title}</p>
-                    <div className="chevron"></div>
-                </div>
+        <div className={`accordion ${isOpen ? 'open' : ''} ${className} `}>
+            <div
+                className="accordion__header font-bold"
+                onClick={toggleAccordion}
+            >
+                <p>{title}</p>
+                <div className="accordion__header__chevron"></div>
+            </div>
 
-            <div className="content">
+            <div className="accordion__content">
                 {text ? <p>{text}</p> : null}
                 {listText ? (
                     <ul>

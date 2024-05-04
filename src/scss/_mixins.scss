@@ -1,14 +1,56 @@
-@mixin flexbox($justify, $align : stretch, $direction: row) {
-	display: flex;
-	justify-content: $justify;
-	align-items: $align;
-	flex-direction: $direction;
+@mixin flexbox($justify, $align: stretch, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
 }
 
 @mixin absolute($top, $bottom, $left, $right) {
-	position: absolute;
-	top: $top;
-	bottom: $bottom;
-	left: $left;
-	right: $right;
+    position: absolute;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+}
+
+// Mixin pour les breakpoints min-width
+@mixin min-breakpoint($point) {
+    @if $point == small {
+        @media (min-width: $breakpoint-small) {
+            @content;
+        }
+    } @else if $point == medium {
+        @media (min-width: $breakpoint-medium) {
+            @content;
+        }
+    } @else if $point == large {
+        @media (min-width: $breakpoint-large) {
+            @content;
+        }
+    } @else if $point == xlarge {
+        @media (min-width: $breakpoint-xlarge) {
+            @content;
+        }
+    }
+}
+
+// Mixin pour les breakpoints max-width
+@mixin max-breakpoint($point) {
+    @if $point == small {
+        @media (max-width: $breakpoint-small) {
+            @content;
+        }
+    } @else if $point == medium {
+        @media (max-width: $breakpoint-medium) {
+            @content;
+        }
+    } @else if $point == large {
+        @media (max-width: $breakpoint-large) {
+            @content;
+        }
+    } @else if $point == xlarge {
+        @media (max-width: $breakpoint-xlarge) {
+            @content;
+        }
+    }
 }

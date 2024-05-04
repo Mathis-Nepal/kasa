@@ -7,10 +7,14 @@ export default function ErrorPage() {
 
     return (
         <Layout>
-            <main className="error-page">
-                <h1>404</h1>
-                <p>Oups! La page que vous demandez n'existe pas.</p>
-                <a href="/">Retourner sur la page d’accueil</a>
+            <main className="main-404">
+                <h1 className="main-404__title">404</h1>
+                <p className="main-404__text">
+                    Oups! La page que vous demandez n'existe pas.
+                </p>
+                <a className="main-404__link" href="/">
+                    Retourner sur la page d’accueil
+                </a>
             </main>
         </Layout>
     );

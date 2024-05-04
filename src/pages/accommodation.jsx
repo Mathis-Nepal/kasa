@@ -27,48 +27,69 @@ const Accommodation = () => {
     return (
         <Layout>
             <main className="accomodation-main px-sm">
-                <div className="carousel ">
-                    <div className="overlay-button">
-                        <button onClick={prevSlide}>
-                            <img src="/chevron.svg" alt="" />
+                <div className="accomodation-main__carousel">
+                    <div className="accomodation-main__carousel__overlay-button">
+                        <button
+                            className="accomodation-main__carousel__overlay-button__button"
+                            onClick={prevSlide}
+                        >
+                            <img
+                                className="accomodation-main__carousel__overlay-button__button__img "
+                                src="/chevron.svg"
+                                alt=""
+                            />
                         </button>
-                        <button onClick={nextSlide}>
-                            <img className='reverse' src="/chevron.svg" alt="" />
+                        <button
+                            className="accomodation-main__carousel__overlay-button__button"
+                            onClick={nextSlide}
+                        >
+                            <img
+                                className="accomodation-main__carousel__overlay-button__button__img reverse"
+                                src="/chevron.svg"
+                                alt=""
+                            />
                         </button>
                     </div>
                     <img
+                        className="accomodation-main__carousel__background-img"
                         src={images[currentIndex]}
                         alt={`Slide ${currentIndex + 1}`}
                     />
                 </div>
-                <div className="information">
-                    <div className="principal-information">
-                        <h2 className="title font-regular">
+                <div className="accomodation-main__information">
+                    <div className="accomodation-main__information__principal-information">
+                        <h2 className="accomodation-main__information__principal-information__title font-regular">
                             {accommodation.title}
                         </h2>
-                        <p className="location ">{accommodation.location}</p>
-                        <div className="list-equipments-accomadation">
+                        <p className="accomodation-main__information__principal-information__location ">
+                            {accommodation.location}
+                        </p>
+                        <div className="accomodation-main__information__principal-information__list-equipments-accomadation">
                             {accommodation.equipments.map((tag, index) => (
                                 <p key={index}>{tag}</p>
                             ))}
                         </div>
                     </div>
-                    <div className="rating-host-row">
+                    <div className="accomodation-main__information__rating-host-row">
                         <Rating rating={accommodation.rating}></Rating>
-                        <div className="host">
-                            <p>{accommodation.host.name}</p>
-                            <img src={accommodation.host.picture} alt="" />
+                        <div className="accomodation-main__information__rating-host-row__host">
+                            <p class="accomodation-main__information__rating-host-row__host__name">
+                                {accommodation.host.name}
+                            </p>
+                            <img
+                                className="accomodation-main__information__rating-host-row__host__picture"
+                                src={accommodation.host.picture}
+                                alt=""
+                            />
                         </div>
                     </div>
                 </div>
-                <div className="container-accordion">
+                <div className="accomodation-main__container-accordion">
                     <Accordion
-                        className="accordion"
                         title="Description"
                         text={accommodation.description}
                     ></Accordion>
                     <Accordion
-                        className="accordion"
                         title="Équipements"
                         listText={accommodation.equipments}
                     ></Accordion>

@@ -5,9 +5,9 @@ import Chevron from './chevron';
 const Navbar = () => {
     return (
         <>
-            <nav>
-                <Chevron color={'red'}></Chevron>
-                <ul>
+            <nav className='navigation'>
+                <Chevron className="navigation__chevron"  color={'red'}></Chevron>
+                <ul  className="navigation__list">
                     <li>
                         <a href="/">Accueil</a>
                     </li>

@@ -11,10 +11,10 @@ const Footer = () => {
         );
     }, []);
     return (
-        <footer style={{ height: contentHeight }}>
-            <div>
-                <Chevron color={'white'}></Chevron>
-                <p>© 2020 Kasa. All rights reserved</p>
+        <footer className='footer' style={{ height: contentHeight }}>
+            <div className='footer__container'>
+                <Chevron className="footer__container__chevron" color={'white'}></Chevron>
+                <p className="footer__container__text">© 2020 Kasa. All rights reserved</p>
             </div>
         </footer>
     );
