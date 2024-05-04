@@ -1,18 +1,22 @@
 import React from 'react';
 import '../scss/style.scss';
 import Chevron from './chevron';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
         <>
-            <nav className='navigation'>
-                <Chevron className="navigation__chevron"  color={'red'}></Chevron>
-                <ul  className="navigation__list">
+            <nav className="navigation">
+                <Chevron
+                    className="navigation__chevron"
+                    color={'red'}
+                ></Chevron>
+                <ul className="navigation__list">
                     <li>
-                        <a href="/kasa/">Accueil</a>
+                        <Link to={`/kasa/`}>Accueil</Link>
                     </li>
                     <li>
-                        <a href="/kasa/about">A propos</a>
+                        <Link to={`/kasa/about/`}>A propos</Link>
                     </li>
                 </ul>
             </nav>
