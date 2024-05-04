@@ -10,17 +10,17 @@ import './scss/style.scss';
 import About from './pages/about';
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: '/kasa/',
         element: <Root />,
         errorElement: <ErrorPage />,
     },
     {
-        path: '/accommodation/:id',
+        path: '/kasa/accommodation/:id',
         element: <Accomodation />,
         errorElement: <ErrorPage />,
     },
     {
-        path: '/about/',
+        path: '/kasa/about/',
         element: <About />,
         errorElement: <ErrorPage />,
     },

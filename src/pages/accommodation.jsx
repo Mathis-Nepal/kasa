@@ -35,7 +35,7 @@ const Accommodation = () => {
                         >
                             <img
                                 className="accomodation-main__carousel__overlay-button__button__img "
-                                src="/chevron.svg"
+                                src="/kasa/chevron.svg"
                                 alt=""
                             />
                         </button>
@@ -45,7 +45,7 @@ const Accommodation = () => {
                         >
                             <img
                                 className="accomodation-main__carousel__overlay-button__button__img reverse"
-                                src="/chevron.svg"
+                                src="/kasa/chevron.svg"
                                 alt=""
                             />
                         </button>

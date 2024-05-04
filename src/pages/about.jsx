@@ -23,7 +23,7 @@ const About = () => {
     return (
         <Layout>
             <main className="p-5">
-                <SubHeader path="/montagne_view_2.png"></SubHeader>
+                <SubHeader path="/kasa/montagne_view_2.png"></SubHeader>
                 {dataAccordion.map((data) => {
                     return (
                         <Accordion

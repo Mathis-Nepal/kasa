@@ -9,10 +9,10 @@ const Navbar = () => {
                 <Chevron className="navigation__chevron"  color={'red'}></Chevron>
                 <ul  className="navigation__list">
                     <li>
-                        <a href="/">Accueil</a>
+                        <a href="/kasa/">Accueil</a>
                     </li>
                     <li>
-                        <a href="/about">A propos</a>
+                        <a href="/kasa/about">A propos</a>
                     </li>
                 </ul>
             </nav>

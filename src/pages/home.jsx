@@ -8,7 +8,7 @@ export default function Root() {
         <Layout>
             <main className="p-5">
                 <SubHeader
-                    path="/montagne_view.png"
+                    path="/kasa/montagne_view.png"
                     title="Chez vous, partout et ailleurs"
                 ></SubHeader>
                 <section className="accomodation-container">
