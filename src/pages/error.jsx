@@ -1,10 +1,7 @@
-import { useRouteError } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Layout from '../layouts/layout';
 
 export default function ErrorPage() {
-    const error = useRouteError();
-    console.error(error);
-
     return (
         <Layout>
             <main className="main-404">
@@ -12,9 +9,9 @@ export default function ErrorPage() {
                 <p className="main-404__text">
                     Oups! La page que vous demandez n'existe pas.
                 </p>
-                <a className="main-404__link" href="/">
+                <Link className={'main-404__link'} to={'/kasa/'}>
                     Retourner sur la page d’accueil
-                </a>
+                </Link>
             </main>
         </Layout>
     );

@@ -20,9 +20,13 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
     },
     {
-        path: '/kasa/about/',
+        path: '/kasa/about',
         element: <About />,
         errorElement: <ErrorPage />,
+    },
+    {
+        path: '*',
+        element: <ErrorPage />,
     },
 ]);
 const originelRoot = document.getElementById('root');

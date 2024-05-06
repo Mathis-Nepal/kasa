@@ -23,6 +23,13 @@ const Accommodation = () => {
             prevIndex === 0 ? images.length - 1 : prevIndex - 1,
         );
     };
+    function needToDisplayButton() {
+        if (images.length === 1) {
+            return 'hidden';
+        } else {
+            return 'visible';
+        }
+    }
 
     return (
         <Layout>
@@ -30,6 +37,9 @@ const Accommodation = () => {
                 <div className="accomodation-main__carousel">
                     <div className="accomodation-main__carousel__overlay-button">
                         <button
+                            style={{
+                                visibility: needToDisplayButton(),
+                            }}
                             className="accomodation-main__carousel__overlay-button__button"
                             onClick={prevSlide}
                         >
@@ -40,6 +50,9 @@ const Accommodation = () => {
                             />
                         </button>
                         <button
+                            style={{
+                                visibility: needToDisplayButton(),
+                            }}
                             className="accomodation-main__carousel__overlay-button__button"
                             onClick={nextSlide}
                         >
