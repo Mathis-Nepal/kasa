@@ -46,7 +46,7 @@ const Accommodation = () => {
                             <img
                                 className="accomodation-main__carousel__overlay-button__button__img "
                                 src="/kasa/chevron.svg"
-                                alt=""
+                                alt="image précédente"
                             />
                         </button>
                         <button
@@ -59,7 +59,7 @@ const Accommodation = () => {
                             <img
                                 className="accomodation-main__carousel__overlay-button__button__img reverse"
                                 src="/kasa/chevron.svg"
-                                alt=""
+                                alt="image suivante"
                             />
                         </button>
                     </div>
@@ -92,7 +92,7 @@ const Accommodation = () => {
                             <img
                                 className="accomodation-main__information__rating-host-row__host__picture"
                                 src={accommodation.host.picture}
-                                alt=""
+                                alt="hôte"
                             />
                         </div>
                     </div>
