@@ -14,7 +14,6 @@ export default function Root() {
                 <section className="accomodation-container">
                     {data.map(
                         (accomodation, index) => (
-                            console.log(accomodation),
                             (
                                 <Accomodation
                                     key={index}
@@ -23,7 +22,7 @@ export default function Root() {
                                     id={accomodation.id}
                                 />
                             )
-                        ),
+                        )
                     )}
                 </section>
             </main>
