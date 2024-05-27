@@ -68,6 +68,14 @@ const Accommodation = () => {
                         src={images[currentIndex]}
                         alt={`Slide ${currentIndex + 1}`}
                     />
+                    { images.length > 1 ?
+                        <p className='accomodation-main__carousel__counter'>
+                        {currentIndex + 1}/{images.length}
+                    </p>
+                    : null
+                    }
+                    
+                    
                 </div>
                 <div className="accomodation-main__information">
                     <div className="accomodation-main__information__principal-information">
